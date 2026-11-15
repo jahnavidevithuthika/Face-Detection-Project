@@ -17,6 +17,7 @@ This project detects human faces in real time using Python and OpenCV.
 Face-Detection-Project
 │
 ├── face_detect.py
+├── retina_detect.py
 ├── requirements.txt
 └── README.md
 
@@ -34,10 +35,22 @@ pip install opencv-python
 python face_detect.py
 ```
 
+## Retina Detection
+
+Use the retina/iris detection script:
+
+```bash
+python retina_detect.py
+```
+
+This version detects a human face and then looks for eye regions and estimates the iris (retina-like region) using OpenCV circle detection.
+
 ## How It Works
 - Opens webcam
 - Detects face using OpenCV Haar Cascade
-- Draws green rectangle around detected face
+- Finds eyes within the face region
+- Estimates the iris using Hough Circles
+- Draws a green circle around the detected retinal area
 
 ## Author
 Jahnavi
